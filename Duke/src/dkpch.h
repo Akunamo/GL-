@@ -12,7 +12,9 @@
 #include <unordered_set>
 #include <sstream>
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+
+#include "GLFW/glfw3.h"
 
 
 #ifdef _WIN32

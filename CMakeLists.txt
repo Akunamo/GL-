@@ -20,7 +20,7 @@ file(GLOB_RECURSE DUKE_SOURCE CONFIGURE_DEPENDS
 add_library(Duke SHARED ${DUKE_SOURCE})
 
 target_compile_definitions(Duke
-    PUBLIC DK_BUILD_DLL  _WIN32
+    PUBLIC DK_BUILD_DLL
 )
 
 # Add the precompiled header
@@ -28,9 +28,15 @@ target_precompile_headers(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke/src/dkpch
 
 # Specify include directories for the library (if needed)
 target_include_directories(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke)
+target_include_directories(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke/src/Duke)
 
 
+add_subdirectory(Duke/vendor/GLFW)
+add_subdirectory(Duke/vendor/GLAD)
 
+# Link GLFW to your executable
+target_link_libraries(Duke glfw -USE_MSVC_RUNTIME_LIBRARY_DLL)  # Make sure 'glfw' is the target defined in GLFW's CMakeLists.txt
+target_link_libraries(Duke glad ) 
 
 
 

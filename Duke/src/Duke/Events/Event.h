@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Duke/core.h"
 
 namespace Duke 
@@ -39,7 +41,7 @@ virtual EventType GetEventType() const override { return GetStaticType(); }
         virtual EventType GetEventType() const = 0;
 
         virtual const char* GetName() const = 0;
-        virtual std::string ToString() const = 0;
+        virtual std::string ToString() const { return GetName(); }
         
         
         virtual int GetCategoryFlags() const = 0;

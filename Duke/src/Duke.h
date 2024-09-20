@@ -2,5 +2,5 @@
 
 // For Applicaions only
 
-#include "Duke/app.hpp"
+#include "Duke/app.h"
 #include "Duke/entryPoint.h"
