@@ -50,8 +50,8 @@ virtual EventType GetEventType() const override { return GetStaticType(); }
             return GetCategoryFlags() & category;
         }
 
-    protected:
         bool m_Handled = false;
+    protected:
     };
 
     class EventDispatcher
@@ -67,7 +67,7 @@ virtual EventType GetEventType() const override { return GetStaticType(); }
         }
 
         template<typename T>
-        bool Dispatch(EventFn<T> fund)
+        bool Dispatch(EventFn<T> func)
         {
             if(m_Event.GetEventType() == T::GetStaticType())
             {
