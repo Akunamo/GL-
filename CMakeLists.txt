@@ -29,14 +29,19 @@ target_precompile_headers(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke/src/dkpch
 # Specify include directories for the library (if needed)
 target_include_directories(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke)
 target_include_directories(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Duke/src/Duke)
+target_include_directories(Duke PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui)
 
 
 add_subdirectory(Duke/vendor/GLFW)
 add_subdirectory(Duke/vendor/GLAD)
+add_subdirectory(Duke/vendor/imgui)
+add_subdirectory(Duke/vendor/glm)
 
 # Link GLFW to your executable
 target_link_libraries(Duke glfw -USE_MSVC_RUNTIME_LIBRARY_DLL)  # Make sure 'glfw' is the target defined in GLFW's CMakeLists.txt
-target_link_libraries(Duke glad ) 
+target_link_libraries(Duke glad)
+target_link_libraries(Duke glm)
+target_link_libraries(Duke ImGui -USE_MSVC_RUNTIME_LIBRARY_DLL)
 
 
 

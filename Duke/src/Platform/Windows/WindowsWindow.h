@@ -12,6 +12,8 @@ namespace Duke
         virtual ~WindowsWindow();
 
         virtual void OnUpdate() override;
+        virtual GLFWwindow* GetNativeWindow();
+
 
         virtual unsigned int GetWidth() const override { return m_Data.Width; }
         virtual unsigned int GetHeight() const override { return m_Data.Width; }

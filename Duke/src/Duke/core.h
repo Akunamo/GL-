@@ -11,3 +11,7 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#include <cassert>
+
+#define ASSERT(x) assert(x)

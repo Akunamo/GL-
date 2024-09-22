@@ -6,7 +6,7 @@ extern Duke::App* Duke::CreateApplication();
 
 int main()
 {
-    auto app = new Duke::App();
+    auto app = Duke::CreateApplication();
     app->Run();
     delete app;
 }

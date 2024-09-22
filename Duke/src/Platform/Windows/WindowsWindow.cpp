@@ -156,6 +156,10 @@ namespace Duke
         glfwSwapBuffers(m_Window);
     }
 
+    GLFWwindow *WindowsWindow::GetNativeWindow()
+    {
+        return m_Window;
+    }
 
     void WindowsWindow::SetVSync(bool enabled)
     {

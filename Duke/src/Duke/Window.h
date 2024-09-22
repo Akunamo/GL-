@@ -26,7 +26,7 @@ namespace Duke
 
         virtual unsigned int GetWidth() const = 0;
         virtual unsigned int GetHeight() const = 0;
-
+        virtual GLFWwindow* GetNativeWindow() = 0;
 
         // Window atributes
         virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
